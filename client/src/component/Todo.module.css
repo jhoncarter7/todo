@@ -1,0 +1,44 @@
+.todo {
+  margin: 0 auto;
+  text-align: center;
+  width: 60%;
+ 
+}
+.todo h2 {
+  background-color: #20e420da;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: xx-large;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+.todoItems {
+  -webkit-box-shadow: 1px 8px 8px 4px rgba(163, 160, 163, 0.57);
+  -moz-box-shadow: 1px 8px 8px 4px rgba(163, 160, 163, 0.57);
+  box-shadow: 1px 8px 8px 4px rgba(163, 160, 163, 0.57);
+  padding: 1rem 0 1rem 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: larger;
+  color: rgb(88, 87, 87);
+  padding: 0 1rem 0 1rem;
+}
+
+.todoItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.edit{
+    font-size: 2rem;
+    color: green;
+    cursor: pointer;
+    padding: 0 1rem 0 1rem;
+}
+.delete{
+    font-size: 2rem;
+    color: red;
+    cursor: pointer;
+}
