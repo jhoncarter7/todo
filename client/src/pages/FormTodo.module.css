@@ -1,0 +1,22 @@
+.addTodo{
+    margin: 3rem auto;
+    width: 40%;
+    
+}
+.todoform{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.todoform input{
+    padding: 1rem;
+    font-size: larger;
+}
+.todoform button{
+    padding: 0.5rem;
+    background-color: rgb(34, 114, 34);
+    font-size: x-large;
+    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+}
