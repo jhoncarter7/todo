@@ -41,7 +41,7 @@ export default function SignUp() {
       <div>
         <p>Already have an account?</p>
         <Link to={'/signin'}>
-        signup
+        signin
         </Link>
       </div>
     </div>
