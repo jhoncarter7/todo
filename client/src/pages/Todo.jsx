@@ -11,7 +11,8 @@ export default function Todo() {
  const fetchTodos = async ()=>{
   try {
     const res = await fetch(`/api/todo/getTodos/${currentUser.uid}`)
-    const data = await res.json()
+    const data = await res.json();
+    console.log(data)
     if(data.success === false){
       console.log(data.message)
       return;
@@ -34,6 +35,7 @@ export default function Todo() {
         console.log(res.status, res.message)
         return;
       }else{
+        
         fetchTodos()
       }
     
