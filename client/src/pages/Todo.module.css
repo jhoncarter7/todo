@@ -42,3 +42,24 @@
     color: red;
     cursor: pointer;
 }
+.addTodo{
+  margin: 3rem auto;
+  background-color: rgb(27, 143, 27);
+  color: white;
+  font-size: x-large;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .todo{
+    width: 100%;
+  }
+  .addTodo{
+    font-size: medium;
+  }
+} 
