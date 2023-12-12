@@ -37,3 +37,12 @@ export const updateTodo = async(req, res)=>{
     console.log(error)
    }
 }
+export const deleteTodo = async(req, res)=>{
+  try {
+    await TodoList.findByIdAndDelete({_id: req.params.todoId})
+    res.status(200).json('delete successful')
+  
+   } catch (error) {
+    console.log(error)
+   }
+}

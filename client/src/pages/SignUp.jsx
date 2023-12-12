@@ -9,11 +9,12 @@ export default function SignUp() {
   const auth = getAuth(app)
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-
+  const [success, setSuccess] = useState(false)
   const signupHandler = (e)=>{
     e.preventDefault()
     try {
       const userCredential = createUserWithEmailAndPassword(auth, email, password)
+      setSuccess(true)
     } catch (error) {
       console.log(error)
     }
@@ -36,6 +37,7 @@ export default function SignUp() {
         </div>   
         <button>Signup</button>
       </form>
+      {success ? <p>created successful</p>: ""}
       <div>
         <p>Already have an account?</p>
         <Link to={'/signin'}>

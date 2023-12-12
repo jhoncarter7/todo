@@ -8,24 +8,41 @@ import { useSelector } from "react-redux";
 export default function Todo() {
   const [userTodos, setUsertodos] = useState([])
   const {currentUser} = useSelector((state) => state.user)
- 
-  useEffect(() => {
-    const fetchTodos = async ()=>{
-      try {
-        const res = await fetch(`/api/todo/getTodos/${currentUser.uid}`)
-        const data = await res.json()
-        if(data.success === false){
-          console.log(data.message)
-          return;
-        }
-        setUsertodos(data)
-      } catch (error) {
-        console.log(error)
-      }
+
+ const fetchTodos = async ()=>{
+  try {
+    const res = await fetch(`/api/todo/getTodos/${currentUser.uid}`)
+    const data = await res.json()
+    if(data.success === false){
+      console.log(data.message)
+      return;
     }
+    setUsertodos(data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+  useEffect(() => {
     fetchTodos()
   },[currentUser.uid])
  
+  const removeTodo = async(id)=>{
+    try {
+      const res = await fetch(`/api/todo/deleteUserTodo/${id}`,{
+        method: 'DELETE'
+      })
+      if(!res.ok){
+        console.log(res.status, res.message)
+        return;
+      }else{
+        fetchTodos()
+      }
+    
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className={classes.todo}>
       <h2> My Todo list</h2>
@@ -39,7 +56,7 @@ export default function Todo() {
               <MdEditNote className={classes.edit} />
               </Link>
               
-              <MdDeleteForever className={classes.delete} />
+              <MdDeleteForever className={classes.delete} onClick={() => removeTodo(todo._id)}/>
             </div>
           </div>
           ))
