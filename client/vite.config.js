@@ -12,5 +12,8 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()]
+  plugins: [react()],
+  optimizeDeps: {
+    include: ["react-icons"]
+  }
 })

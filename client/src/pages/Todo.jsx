@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import classes from "./Todo.module.css";
-import { MdEditNote } from "react-icons/md";
-import { MdDeleteForever } from "react-icons/md";
+import { MdEditNote, MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
