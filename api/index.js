@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv'
 import todolist from './routes/todos.routes.js'
 import bodyParser from "body-parser";
+import path from 'path'
 
 dotenv.config()
 mongoose.connect(process.env.MONGODB_URI).then(()=>{
